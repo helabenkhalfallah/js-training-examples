@@ -2,9 +2,7 @@
 
 **HArray :**
 es6 array new concepts
-```
 [ES6 Array](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/arrays)
-```
 
 **HAsynAwait:**
 es6 async await concept
