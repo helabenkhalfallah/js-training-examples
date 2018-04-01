@@ -32,7 +32,7 @@ es6 descruting
 **HGenerators:**
 es6 generators concept
 
-[ES6 Generators](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/desctructing)
+[ES6 Generators](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/generators)
 
 
 **HIterables:**
