@@ -1,99 +1,95 @@
 # js-training-examples
 
 **HArray :**
-
 es6 array new concepts
 
 [ES6 Array](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/arrays)
 
 **HAsynAwait:**
 es6 async await concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/async
-```
+
+[ES6 AsynAwait](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/async)
+
 
 **HPromises:**
 es6 async promise concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/async
-```
+
+[ES6 Promise](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/async)
+ 
 
 **HClasses:**
 es6 class concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/class
-```
+
+[ES6 Classes](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/class)
+
 
 **HDestructing:**
 es6 descruting
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/desctructing
-```
+
+[ES6 Destructing](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/desctructing)
+
 
 **HGenerators:**
 es6 generators concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/desctructing
-```
+
+[ES6 Generators](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/desctructing)
+
 
 **HIterables:**
 es6 iterables concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/iterables
-```
+
+[ES6 Iterables](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/iterables)
+
 
 **HMaps:**
 es6 map/weakmap/set concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/maps
-```
+
+[ES6 Maps](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/maps)
+
 
 **HMutability:**
 es6 mutability concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/mutable-immutable
-```
+
+[ES6 Mutability](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/mutable-immutable)
 
 **HNumbers:**
 es6 numbers concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/numbers
-```
+
+[ES6 Numbers](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/numbers)
+
 
 **HParameters:**
 es6 parameters concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/parameters
-```
+
+[ES6 Parameters](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/parameters)
+
 
 **HPureImpure:**
 es6 pure & impure concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/pure-impure
-```
+
+[ES6 Pure Impure](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/pure-impure)
+
 
 **HSpread:**
 es6 spread concept 
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/spread
-```
+
+[ES6 Spread](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/spread)
+
 
 **HString:**
 es6 strings concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/strings
-```
+
+[ES6 String](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/strings)
 
 **HSymbols:**
 es6 symbols concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/symbols
-```
+
+[ES6 Symbols](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/symbols)
+
 
 **HImportExport:**
 es6 import & export concept
-```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/import-export
-```
+
+[ES6 Import Export](https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/import-export)
 
 
