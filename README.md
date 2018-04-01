@@ -3,7 +3,7 @@
 **HArray :**
 es6 array new concepts
 ```
-https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/arrays
+[https://github.com/helabenkhalfallah/js-training-examples/tree/master/src/arrays]
 ```
 
 **HAsynAwait:**
