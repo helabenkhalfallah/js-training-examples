@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/helabenkhalfallah/js-training-examples#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.5",
     "nodemon": "^1.17.2"
   },
