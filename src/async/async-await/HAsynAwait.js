@@ -22,11 +22,8 @@ const fetchAwaitQuotes = async () => {
 // async await http chaning fetch
 const getUsers = () => axios.get('http://localhost:3004/users') // async fetch
 const getQuotes = () => axios.get('http://localhost:3004/quotes') // async fetch
-
-
-// async await huge traitement
 const fetchAwaitChains = async () => {
-  const [usersResponse, quotesResponse] = await Promise.all([getUsers(), getQuotes()])
+  const [usersResponse, quotesResponse] = await axios.all([getUsers(), getQuotes()])
   return { users: usersResponse, quotes: quotesResponse }
 }
 
@@ -68,20 +65,21 @@ const HAsynAwait = () => {
   console.log(' --- end pure async ---') */
 
   // async await http chaning fetch
-  /* axios.all([getUsers(), getQuotes()])
-    .then(axios.spread((acct, perms) => {
-      console.log('all acct : ', acct)
-      console.log('all perms : ', perms)
-    })) */
+  // spread axios result
+  axios.all([getUsers(), getQuotes()])
+    .then(axios.spread((users, quotes) => {
+      console.log('all users 1 : ', users)
+      console.log('all quotes 1 : ', quotes)
+    })) /* */
 
-  fetchAwaitChains()
+  /* fetchAwaitChains()
     .then((data) => {
       console.log('fetchAwaitChains data : ', data)
       const { users, quotes } = data
       console.log('fetchAwaitChains users : ', users)
       console.log('fetchAwaitChains quotes : ', quotes)
     })
-    .catch(reason => console.log('fetchAwaitChains error : ', reason.message))
+    .catch(reason => console.log('fetchAwaitChains error : ', reason.message)) */
 
   // async await huge traitement
 }
