@@ -17,6 +17,8 @@ import HSymbols from './src/symbols/HSymbols'
 import HImportExport from './src/import-export/HImportExport'
 
 
-console.log(' --- HAsynAwait ---')
-HAsynAwait()
+// console.log(' --- HAsynAwait ---')
+// HAsynAwait()
+console.log(' --- HArray ---')
+HArray()
 
