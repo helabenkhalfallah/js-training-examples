@@ -3,15 +3,15 @@
 export const getSeconds = seconds =>
   (Math.floor((((seconds % (365 * 24 * 60 * 60)) % (24 * 60 * 60)) % (60 * 60)) % (60)))
 
-// get years from seconds
+// get minutes from seconds
 export const getMinutes = seconds =>
   (Math.floor((((seconds % (365 * 24 * 60 * 60)) % (24 * 60 * 60)) % (60 * 60)) / (60)))
 
-// get years from seconds
+// get hours from seconds
 export const getHours = seconds =>
   (Math.floor(((seconds % (365 * 24 * 60 * 60)) % (24 * 60 * 60)) / (60 * 60)))
 
-// get years from seconds
+// get days from seconds
 export const getDays = seconds =>
   (Math.floor((seconds % (365 * 24 * 60 * 60)) / (24 * 60 * 60)))
 
