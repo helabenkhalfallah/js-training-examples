@@ -30,8 +30,8 @@ const fetchAwaitChains = async () => {
 // async await examples
 const HAsynAwait = () => {
   // async await http users fetch
-  console.log(' --- async await http users fetch ---')
-  console.log(' --- begin users ---')
+  // console.log(' --- async await http users fetch ---')
+  // console.log(' --- begin users ---')
 
   // fetch
   /* fetchAwaitUsers()
@@ -39,11 +39,11 @@ const HAsynAwait = () => {
     .catch(reason => console.log(reason.message)) */
 
   // end
-  console.log(' --- end users ---')
+  // console.log(' --- end users ---')
 
   // async await http quotes fetch
-  console.log(' --- async await http quotes fetch ---')
-  console.log(' --- begin quotes ---')
+  // console.log(' --- async await http quotes fetch ---')
+  // console.log(' --- begin quotes ---')
 
   // fetch
   /* fetchAwaitQuotes()
@@ -51,11 +51,11 @@ const HAsynAwait = () => {
     .catch(reason => console.log(reason.message)) */
 
   // end
-  console.log(' --- end quotes ---')
+  // console.log(' --- end quotes ---')
 
   // without async await
-  console.log(' --- without async await ---')
-  console.log(' --- begin pure async ---')
+  // console.log(' --- without async await ---')
+  // console.log(' --- begin pure async ---')
   /* getUsers()
     .then(data => console.log('getUsers : ', data.data))
     .catch(reason => console.log(reason.message))
@@ -66,11 +66,11 @@ const HAsynAwait = () => {
 
   // async await http chaning fetch
   // spread axios result
-  axios.all([getUsers(), getQuotes()])
+  /* axios.all([getUsers(), getQuotes()])
     .then(axios.spread((users, quotes) => {
       console.log('all users 1 : ', users)
       console.log('all quotes 1 : ', quotes)
-    })) /* */
+    }))  */
 
   /* fetchAwaitChains()
     .then((data) => {
@@ -81,7 +81,13 @@ const HAsynAwait = () => {
     })
     .catch(reason => console.log('fetchAwaitChains error : ', reason.message)) */
 
-  // async await huge traitement
+  // async await try/catch
+  /* try {
+    const response = await axios.get('http://localhost:3004/quotes')
+    console.log('await response : ', response)
+  } catch (error) {
+    console.log('await error : ', error)
+  } */
 }
 
 export default HAsynAwait

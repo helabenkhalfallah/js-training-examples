@@ -186,6 +186,27 @@ const romanNumeralsEncoder2 = (number) => {
   return results.join('')
 }
 
+const reduceArray = (array, matrix) => {
+  let snailArray = Object.assign(array)
+  if (snailArray && snailArray.length > 0) {
+    if (snailArray.length > 1) {
+      matrix.push(...snailArray.shift())
+      snailArray.map(leftArray => matrix.push(leftArray.pop()))
+      matrix.push(...snailArray.pop().reverse())
+      snailArray.reverse().map(lastArray => (matrix.push(lastArray.shift())))
+      snailArray = snailArray.reverse()
+    } else {
+      matrix.push(...snailArray.shift().reverse())
+    }
+    reduceArray(snailArray, matrix)
+  }
+  return matrix
+}
+
+const snail = (array) => {
+  return reduceArray(array, [])
+}
+
 
 // async await examples
 const HArray = () => {
