@@ -40,6 +40,17 @@ const incrementString = (entry) => {
   return `${stringValue}${firstDigit}${parsedValue}`
 }
 
+const removeProperty = (obj, prop) => {
+  const { [prop]: omit, ...res } = obj
+  return res
+}
+
+// for a given number find hours and minutes
+// display format is hours:minutes
+const hours = val => (parseInt(val / 60, 10))
+const minutes = val => (parseInt(val % 60, 10))
+const timeConvert = num => (`${hours(num)}:${minutes(num)}`)
+
 // number examples
 const HNumbers = () => {
   console.log(seven(times(five())))
@@ -51,6 +62,22 @@ const HNumbers = () => {
   console.log(incrementString('foobar000'))
   console.log(incrementString('foo'))
   console.log(incrementString(''))
+
+  const resultat = removeProperty({ firstname: 'Jane', lastname: 'Doe' }, 'firstname')
+  console.log('resultat', resultat)
+
+  // Have the function CheckNums(num1,num2) take both parameters being passed
+  // and return the string true if num2 is greater than num1,
+  // otherwise return the string false. If the parameter values are equal
+  // to each other then return the string -1.
+  const isEqual = (num1, num2) => ((num2 === num1 ? -1 : false))
+  const checkNums = (num1, num2) => ((num2 > num1) ? true : isEqual(num1, num2))
+  console.log('checkNums : ', checkNums(8, 81))
+
+  // for a given number find hours and minutes
+  // display format is hours:minutes
+  const timeValue = 8
+  console.log('timeConvert : ', timeConvert(timeValue))
 }
 
 export default HNumbers

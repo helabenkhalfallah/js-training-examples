@@ -2,6 +2,8 @@
 import fetch from 'node-fetch'
 
 // Promises http fetch users
+// always return data and errors
+// never throw error but handle it
 const fetchUsers = () => {
   fetch('http://localhost:3004/users')
     .then((json) => {

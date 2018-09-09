@@ -15,16 +15,26 @@ import HSpread from './src/spread/HSpread'
 import HString from './src/strings/HString'
 import HSymbols from './src/symbols/HSymbols'
 import HImportExport from './src/import-export/HImportExport'
+import HFunctions from './src/functions/HFunctions'
 
 
 console.log(' --- HAsynAwait ---')
-HAsynAwait()
+// HAsynAwait()
 
 console.log(' --- HArray ---')
 HArray()
 
 console.log(' --- HPromises ---')
-HPromises()
+// HPromises()
 
 console.log(' --- HNumbers ---')
 HNumbers()
+
+console.log(' --- HString ---')
+HString()
+
+console.log(' --- HSpread ---')
+HSpread()
+
+console.log(' --- HFunctions ---')
+HFunctions()

@@ -208,7 +208,15 @@ const snail = (array) => {
 }
 
 
-// async await examples
+const inventory = [
+  { type: 'machine', value: 5000 },
+  { type: 'machine', value: 650 },
+  { type: 'duck', value: 10 },
+  { type: 'furniture', value: 1200 },
+  { type: 'machine', value: 77 },
+]
+
+// array examples
 const HArray = () => {
   console.log('generateAlphabet Array: ', generateAlphabet())
   console.log('find missing letter on alphabet sequence : ', findMissingLetter(['A', 'D', 'B', 'E']))
@@ -240,6 +248,12 @@ const HArray = () => {
   console.log('subArray from array (from : 9, end : 26) : ', subArray(array, 9, 26)) // not crash even exceed array length
   console.log('roman encode : ', romanNumeralsEncoder2(16))
   console.log('format seconds duration : ', HDateUtils.formattedDateFromSeconds(99878))
+
+  const valuesInventory = inventory.map(item => item.value)
+  console.log('valuesInventory : ', valuesInventory)
+
+  const totalMachineValue = valuesInventory.reduce((prev, next) => prev + next)
+  console.log('totalMachineValue : ', totalMachineValue)
 }
 
 export default HArray

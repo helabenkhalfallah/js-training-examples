@@ -28,6 +28,8 @@ const fetchAwaitChains = async () => {
 }
 
 // async await examples
+// always return data and errors
+// never throw error but handle it
 const HAsynAwait = () => {
   // async await http users fetch
   // console.log(' --- async await http users fetch ---')
