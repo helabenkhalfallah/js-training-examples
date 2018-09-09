@@ -67,10 +67,6 @@ const sortComments = data => data.sort((item, next) => item.id > next.id)
 const reduceComments = data => data.reduce((total, item) => total + item.note, 0)
 
 const HFunctions = () => {
-  console.log('HFunctions sum(10)(11) : ', sum(10)(11))
-  console.log('HFunctions sub(12)(11) : ', sub(12)(11))
-  console.log('HFunctions mul(4)(2) : ', mul(4)(2))
-
   // filter & sort
   console.log('HFunctions filterComments : ', filterComments(comments))
   console.log('HFunctions sortComments : ', sortComments(comments))
@@ -85,6 +81,17 @@ const HFunctions = () => {
   console.log('------------------------------')
   const arrayManipulation = compose(compose(comments)(filterComments)(sortComments))(reduceComments)(identity)
   console.log('HFunctions arrayManipulation : ', arrayManipulation)
+
+  // some operations
+  console.log('HFunctions sum(10)(11) : ', sum(10)(11))
+  console.log('HFunctions sub(12)(11) : ', sub(12)(11))
+  console.log('HFunctions mul(4)(2) : ', mul(4)(2))
+
+  // advanced staff
+  const [a, b, c] = [1, 2, 3]
+  console.log('HFunctions a : ', a)
+  console.log('HFunctions b : ', b)
+  console.log('HFunctions c : ', c)
 }
 
 export default HFunctions
