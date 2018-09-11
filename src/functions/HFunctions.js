@@ -66,6 +66,7 @@ const filterComments = data => data.filter(comment => comment.categorie === 'nat
 const sortComments = data => data.sort((item, next) => item.id > next.id)
 const reduceComments = data => data.reduce((total, item) => total + item.note, 0)
 
+
 const HFunctions = () => {
   // filter & sort
   console.log('HFunctions filterComments : ', filterComments(comments))
