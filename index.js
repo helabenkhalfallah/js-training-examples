@@ -21,11 +21,14 @@ import HFunctions from './src/functions/HFunctions'
 console.log(' --- HAsynAwait ---')
 // HAsynAwait()
 
-console.log(' --- HArray ---')
-HArray()
-
 console.log(' --- HPromises ---')
 // HPromises()
+
+console.log(' --- HFunctions ---')
+HFunctions()
+
+console.log(' --- HArray ---')
+HArray()
 
 console.log(' --- HNumbers ---')
 HNumbers()
@@ -36,5 +39,5 @@ HString()
 console.log(' --- HSpread ---')
 HSpread()
 
-console.log(' --- HFunctions ---')
-HFunctions()
+console.log(' --- HDestructing ---')
+HDestructing()
