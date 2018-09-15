@@ -1,5 +1,8 @@
 // es6 Destructing concepts
+// Destructuring assignment allows for instantly
+// mapping an object or array onto many variables.
 // http://exploringjs.com/es6/ch_destructuring.html
+// https://javascript.info/destructuring-assignment
 
 const HDestructing = () => {
   // split string
@@ -69,6 +72,32 @@ const HDestructing = () => {
 
   const n = { x, y, ...z }
   console.log('n : ', n) // { x: 1, y: 2, a: 3, b: 4 }
+
+  // nested destructing
+  // define your pattern
+  const options = {
+    size: {
+      width: 100,
+      height: 200,
+    },
+    items: ['Cake', 'Donut'],
+    extra: true,
+  }
+  const {
+    size: { // put size here
+      width,
+      height,
+    },
+    items: [item1, item2], // assign items here
+    title = 'Menu', // not present in the object (default value is used)
+  } = options
+  console.log('title : ', title) // Menu
+  // console.log(size) // undefined
+  console.log('width : ', width) // 100
+  console.log('height : ', height)// 200
+  // console.log(items) // undefined
+  console.log('item1 : ', item1) // Cake
+  console.log('item2 : ', item2) // Donut
 }
 
 export default HDestructing
