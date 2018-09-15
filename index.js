@@ -14,7 +14,6 @@ import HPureImpure from './src/pure-impure/HPureImpure'
 import HSpread from './src/spread/HSpread'
 import HString from './src/strings/HString'
 import HSymbols from './src/symbols/HSymbols'
-import HImportExport from './src/import-export/HImportExport'
 import HFunctions from './src/functions/HFunctions'
 
 
@@ -41,3 +40,6 @@ HSpread()
 
 console.log(' --- HDestructing ---')
 HDestructing()
+
+console.log(' --- HPureImpure ---')
+HPureImpure()
