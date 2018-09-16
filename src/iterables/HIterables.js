@@ -1,4 +1,22 @@
 // es6 Iterables concepts
+/*
+interface Iterable {
+  [Symbol.iterator]() : Iterator;
+}
+interface Iterator {
+  next() : IteratorResult;
+}
+interface IteratorResult {
+  value: any;
+  done: boolean;
+}
+The following values are iterable:
+Arrays
+Strings
+Maps
+Sets
+DOM data structures
+*/
 
 // custom alphabet iterator
 const alphabetIterator = () => {
