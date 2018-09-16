@@ -1,133 +1,114 @@
-// es6 Generators concepts
-/*
-https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5
-http://exploringjs.com/es6/ch_generators.html
 
-* Generators are functions that can be paused and resumed
-(think cooperative multitasking or coroutines),
-which enables a variety of applications.
 
-function* genFunc() {
-  // (A)
-  console.log('First');
-  yield; // (B)
-  console.log('Second'); // (C)
+function* generatorFunction() {
+  console.log('This will be executed first.')
+  yield 'Hello, '
+
+  console.log('I will be printed after the pause')
+  yield 'World!'
 }
 
-Calling genFunc does not execute its body.
-Instead, you get a so-called generator object,
-with which you can control the execution of the body:
+function* naturalNumbers() {
+  let num = 1
+  while (true) {
+    yield num
+    num += 1
+  }
+}
 
-> const genObj = genFunc();
+function* simple() {
+  yield 1
+  return 2
+}
 
-genFunc() is initially suspended before the body (line A).
-The method call genObj.next() continues execution until the next yield:
+function* operation(x) {
+  const y = 2 * (yield (x + 1))
+  const z = yield (y / 3)
+  return (x + y + z)
+}
 
-> genObj.next()
-First
-{ value: undefined, done: false }
-
-genFunc is now paused in line B. If we call next() again, execution resumes and line C is executed:
-
-> genObj.next()
-Second
-{ value: undefined, done: true }
-
-Generators can play three roles:
-
-1. Iterators (data producers): Each yield can return a value via next().
-2. Observers (data consumers): yield can also receive a value from next()
-(via a parameter). That means that generators become data consumers that
-pause until a new value is pushed into them via next().
-3. Coroutines (data producers and consumers): Given that generators are pausable
-and can be both data producers and data consumers, not much work is needed to turn
-them into coroutines (cooperatively multitasked tasks).
-
-*/
-
-import axios from 'axios'
-import co from 'co'
-
-// co return a promise so we can easily
-// then/catch
-// co(genFn) - co takes a generator function and returns a promise.
-// co.wrap(genFn) - co.wrap works like co except it returns
-// a function that returns a promise.
-const runPromiseWorker = worker => co(worker)
-const runIteratorWorker = co.wrap(worker => worker())
-
-// run multiple workers
-function* multiRunners(workers) {
+function* cleanUp() {
   try {
-    // yield with promise : yield Promise()
-    // we should transform generator function
-    // to a promise ti be able to call yield
-    const wokersPromises = workers.map(worker => runPromiseWorker(worker))
-    const response = yield Promise.all(wokersPromises)
-    return response
-  } catch (error) {
-    return error
+    yield 1
+    yield 2
+    yield 3
+  } finally {
+    console.log('cleanup!')
   }
 }
-const runWorkers = workers => runPromiseWorker(multiRunners(workers))
 
-
-// fetch user worker
-function* fetchUsersWorker() {
+function* handleErrors() {
   try {
-    const users = yield axios.get('http://localhost:3004/users')
-    return users
+    yield 1
   } catch (error) {
-    return error
+    console.log('Handle Errors : ', error)
   }
-}
-
-// fetch quotes worker
-function* fetchQuotesWorker() {
-  try {
-    const quotes = yield axios.get('http://localhost:3004/quotes')
-    return quotes
-  } catch (error) {
-    return error
-  }
-}
-
-// runner
-const fetchUsersRunner = (worker) => {
-  const iterator = worker()
-  const run = (arg) => {
-    const result = iterator.next(arg)
-    if (result.done) {
-      return result.value
-    }
-    return Promise.resolve(result.value).then(run)
-  }
-  return run()
+  yield 2
+  throw new Error('Hello!')
 }
 
 
 // generator sample
 const HGenerators = () => {
-  // way 1
-  fetchUsersRunner(fetchUsersWorker)
+  const generatorObject = generatorFunction()
+  console.log(generatorObject.next().value) // Line 4 : This will be executed first. Hello,
+  console.log(generatorObject.next().value) // Line 5 : I will be printed after the pause World!
+  console.log(generatorObject.next().value) // Line 6 : undefined
 
-  // // way2 with co
-  runIteratorWorker(fetchUsersWorker)
-    .then(data => console.log('HGenerators users runIteratorWorker data : ', data))
-    .catch(error => console.log('HGenerators users runIteratorWorker error : ', error))
+  // iterate
+  // lazy evaluation
+  const numbers = naturalNumbers()
+  console.log(numbers.next().value)
+  console.log(numbers.next().value)
+  console.log(numbers.next().value)
 
-  // runIteratorWorker(fetchQuotesWorker)
-  //   .then(data => console.log('HGenerators quotes runIteratorWorker data : ', data))
-  //   .catch(error => console.log('HGenerators quotes runIteratorWorker error : ', error))
+  // with return
+  const itSimple = simple()
+  console.log(itSimple.next()) // { value:1, done:false }
+  console.log(itSimple.next()) // { value:2, done:true }
 
-  // mutliple yield
-  runWorkers([fetchUsersWorker, fetchQuotesWorker])
-    .then((data) => {
-      console.log('HGenerators mutliple data : ', data)
-      console.log('HGenerators mutliple users : ', data[0].data)
-      console.log('HGenerators mutliple quotes : ', data[1].data)
-    })
-    .catch(error => console.log('HGenerators mutliple : ', error))
+  // math operation
+  const itOperation = operation(5)
+
+  // note: not sending anything into `next()` here
+  console.log(itOperation.next()) // y: { value:6, done:false }
+  console.log(itOperation.next(12)) // z : { value:8, done:false }
+  console.log(itOperation.next(13)) // return : { value:42, done:true }
+
+  // clean up
+  const itCleanUp = cleanUp()
+  console.log(itCleanUp.next()) // { value: 1, done: false }
+  console.log(itCleanUp.next()) // { value: 2, done: false }
+  console.log(itCleanUp.next()) // { value: 3, done: false }
+  console.log(itCleanUp.next()) // cleanup! { value: undefined, done: true }
+
+  // Early Completion
+  const itEarlyCompletionCleanUp = cleanUp()
+  console.log(itEarlyCompletionCleanUp.next()) // { value: 1, done: false }
+  console.log(itEarlyCompletionCleanUp.return(23)) // cleanup! { value: 23, done: true }
+
+  // Early Abort
+  const itEarlyAbortCleanUp = cleanUp()
+  console.log(itEarlyAbortCleanUp.next())
+  try {
+    itEarlyAbortCleanUp.throw('Trigger Exception')
+  } catch (err) {
+    console.log('error : ', err) // error :  Trigger Exception
+  }
+  console.log(itEarlyAbortCleanUp.next()) // { value: undefined, done: true }
+
+  // handle errors
+  console.log('------ handle errors ------')
+  const itHandleErrors = handleErrors()
+  console.log(itHandleErrors.next()) // { value: 1, done: false }
+  try {
+    itHandleErrors.throw('Hi errors!') // Hi errors!
+    console.log(itHandleErrors.next()) // execute throw ('Hello!')
+    console.log('never gets here')
+  } catch (err) {
+    console.log(err) // Hello!
+  }
+  console.log('------ end handle errors ------')
 }
 
 export default HGenerators
