@@ -19,9 +19,11 @@
   "homepage": "https://github.com/helabenkhalfallah/js-training-examples#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "co": "^4.6.0",
     "lodash": "^4.17.5",
     "node-fetch": "^2.1.2",
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.2",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
