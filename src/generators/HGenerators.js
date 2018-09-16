@@ -1,6 +1,50 @@
 // es6 Generators concepts
-// https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5
-// http://exploringjs.com/es6/ch_generators.html
+/*
+https://codeburst.io/understanding-generators-in-es6-javascript-with-examples-6728834016d5
+http://exploringjs.com/es6/ch_generators.html
+
+* Generators are functions that can be paused and resumed
+(think cooperative multitasking or coroutines),
+which enables a variety of applications.
+
+function* genFunc() {
+  // (A)
+  console.log('First');
+  yield; // (B)
+  console.log('Second'); // (C)
+}
+
+Calling genFunc does not execute its body.
+Instead, you get a so-called generator object,
+with which you can control the execution of the body:
+
+> const genObj = genFunc();
+
+genFunc() is initially suspended before the body (line A).
+The method call genObj.next() continues execution until the next yield:
+
+> genObj.next()
+First
+{ value: undefined, done: false }
+
+genFunc is now paused in line B. If we call next() again, execution resumes and line C is executed:
+
+> genObj.next()
+Second
+{ value: undefined, done: true }
+
+Generators can play three roles:
+
+1. Iterators (data producers): Each yield can return a value via next().
+2. Observers (data consumers): yield can also receive a value from next()
+(via a parameter). That means that generators become data consumers that
+pause until a new value is pushed into them via next().
+3. Coroutines (data producers and consumers): Given that generators are pausable
+and can be both data producers and data consumers, not much work is needed to turn
+them into coroutines (cooperatively multitasked tasks).
+
+*/
+
 import axios from 'axios'
 import co from 'co'
 
