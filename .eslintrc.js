@@ -7,6 +7,7 @@ module.exports = {
     },
     "extends": "airbnb-base",
     "rules": {
+        "no-plusplus": 'off',
         "max-len": [1, 120, 2, { ignoreComments: true }],
         "indent": [
             2,

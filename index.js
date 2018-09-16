@@ -43,4 +43,7 @@ console.log(' --- HPureImpure ---')
 HPureImpure()
 
 console.log(' --- HGenerators ---')
-HGenerators()
+// HGenerators()
+
+console.log(' --- HIterables ---')
+HIterables()
