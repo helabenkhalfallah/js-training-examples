@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "co": "^4.6.0",
+    "immutable": "^3.8.2",
     "lodash": "^4.17.5",
     "node-fetch": "^2.1.2",
     "nodemon": "^1.17.2",
