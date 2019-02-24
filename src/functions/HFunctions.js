@@ -2,8 +2,8 @@
 
 // sum function
 // take two arguments and return the sum
-const sum = (a, b) => a + b
-// const sum = a => b => a + b
+// const sum = (a, b) => a + b
+const sum = a => b => a + b
 
 // carré
 // const carry = x => (x * x)

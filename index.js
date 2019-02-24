@@ -13,7 +13,7 @@ import HFunctions from './src/functions/HFunctions'
 import HGenerators from './src/generators/HGenerators'
 import HMaps from './src/maps/HMaps'
 import HMutability from './src/mutable-immutable/HMutability'
-
+import FPArray from './src/arrays/FPArray'
 
 console.log(' --- HAsynAwait ---')
 // HAsynAwait()
@@ -49,4 +49,7 @@ console.log(' --- HIterables ---')
 HIterables()
 
 console.log(' --- HGenerators ---')
-HGenerators()
+// HGenerators()
+
+console.log(' --- FPArray ---')
+FPArray()

@@ -42,7 +42,6 @@ const sortArray = (array) => {
 // modify array values
 const modifyArrayValues = array => (array.map(item => item + 2))
 
-
 // check if all items in array satisfay condition
 const isAllItemsPositive = array => (array.every(item => item > 0))
 
