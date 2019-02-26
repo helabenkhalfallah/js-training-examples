@@ -5,11 +5,12 @@
 // https://javascript.info/destructuring-assignment
 
 const HDestructing = () => {
+  // crazy but true :))
   // split string
   // like str.split('')
-  // crazy but true :))
-  const [...array1] = 'Azerty' // [ 'A', 'z', 'e', 'r', 't', 'y' ]
+  const [...array1] = 'Azerty'
   console.log('array1 : ', array1)
+  // [ 'A', 'z', 'e', 'r', 't', 'y' ]
 
   // like str.charAt(0)
   const [firstChar] = 'Azerty' // A
@@ -33,14 +34,18 @@ const HDestructing = () => {
 
   // If you destructure an Array,
   // you can choose to only extract a prefix
-  const [a, b] = ['a', 'b', 'c'] // a='a'; b='b'
-  console.log('a : ', a) // a
-  console.log('b : ', b) // b
+  const [elm1, elm2] = ['a', 'b', 'c']
+  console.log('elm1 : ', elm1) // a
+  console.log('elm2 : ', elm2) // b
 
   // skip
-  const [, , c, d] = ['a', 'b', 'c', 'd']
-  console.log('c : ', c) // c
-  console.log('d : ', d) // d
+  const [, , elm3, elm4] = ['a', 'b', 'c', 'd', 'f', 's']
+  console.log('elm3 : ', elm3) // c
+  console.log('elm4 : ', elm4) // d
+
+  // rest
+  const [, , ...rest] = ['a', 'b', 'c', 'd']
+  console.log('rest : ', rest) // [ 'c', 'd' ]
 
   // rest operator :
   // If the operator can’t find any elements,
@@ -53,8 +58,8 @@ const HDestructing = () => {
 
   // spread an objects
   // ..z => REST
-  // Pick what you need :
   // const { x: x } = { x: 7, y: 3 }; // x = 7
+  // Pick what you need :
   const { x, y, ...z } = {
     x: 1,
     y: 2,

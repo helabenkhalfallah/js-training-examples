@@ -3,11 +3,15 @@
 // sum function
 // take two arguments and return the sum
 // const sum = (a, b) => a + b
-const sum = a => b => a + b
-
 // carré
 // const carry = x => (x * x)
 // const carry = x => x * x
+
+// Curry functions
+
+// sum function
+// take two arguments and return the sum
+const sum = a => b => a + b
 
 // sub function
 // take two arguments and return the sub
@@ -61,6 +65,7 @@ const comments = [
 // the result of filter and sort is an array
 // so we can apply reduce on it
 const compose = x => f => g => g(f(x))
+// identity
 const identity = x => x
 
 // we want to filter comment
@@ -89,15 +94,35 @@ const HFunctions = () => {
   console.log('HFunctions arrayManipulation : ', arrayManipulation)
 
   // some operations
-  console.log('HFunctions sum(10)(11) : ', sum(10)(11))
-  console.log('HFunctions sub(12)(11) : ', sub(12)(11))
-  console.log('HFunctions mul(4)(2) : ', mul(4)(2))
+  console.log('Sum(10)(11) : ', sum(10)(11)) // Sum(10)(11) :  21
+  console.log('Sub(12)(11) : ', sub(12)(11)) // Sub(12)(11) :  1
+  console.log('Mul(4)(2) : ', mul(4)(2)) // Mul(4)(2) :  8
 
   // advanced staff
   const [a, b, c] = [1, 2, 3]
   console.log('HFunctions a : ', a)
   console.log('HFunctions b : ', b)
   console.log('HFunctions c : ', c)
+
+  // f and g are functions and x is the value
+  // being "piped" through them
+  const compose2 = (f, g) => x => f(g(x))
+  const toUpperCase = x => x.toUpperCase()
+  const exclaim = x => `${x}!`
+  const shout = compose2(exclaim, toUpperCase)
+  console.log('shout : ', shout('send in the clowns'))
+
+  // retrieve (nbreChars) chars
+  // from start from str string
+  const curriedSubstring = start => nbreChars =>
+    str => str.substr(start, nbreChars)
+  const str = 'Azerty'
+  const subStr = curriedSubstring(2)(3)(str)
+  console.log('Curry subStr : ', subStr) // Curry subStr :  ert
+  const curriedLowerCase = strg => strg.toLowerCase()
+  console.log('Curry Lower : ', curriedLowerCase(str)) // Curry Lower :  azerty
+  const result = compose(curriedLowerCase, curriedSubstring(0)(1)(str))
+  console.log('Compose result : ', result)
 }
 
 export default HFunctions

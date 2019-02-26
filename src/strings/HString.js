@@ -1,8 +1,20 @@
 // es6 String concepts
-const firstReverse = str => (
-  str.split(' ')
+
+// reverse a string
+const reverse = str => (
+  str
+    .split(' ')
     .map(word => word.split('').reverse().join(''))
     .reverse()
+    .join(' ')
+)
+
+// capitalise string words
+const capitaliseWords = str => (
+  str
+    .split(' ')
+    .map(word =>
+      word.replace(word.charAt(0), word.charAt(0).toUpperCase()))
     .join(' ')
 )
 
@@ -21,12 +33,6 @@ const letterChanges = (str) => {
   })
   return results.join(' ')
 }
-
-const letterCapitalize = str => (
-  str.split(' ')
-    .map(word => word.replace(word.charAt(0), word.charAt(0).toUpperCase()))
-    .join(' ')
-)
 
 // simple symbols
 // a string is accepted only
@@ -94,9 +100,9 @@ const alphabetSoup = (value) => {
 
 // keep this function call here
 const HString = () => {
-  console.log(firstReverse('Argument goes here'))
-  console.log(letterChanges('Argument goes here'))
-  console.log(letterCapitalize('Argument goes here'))
+  console.log('reverse :', reverse('Argument goes here'))
+  console.log('capitalise Words :', capitaliseWords('Argument goes here')) // capitalise Words : Argument Goes Here
+  console.log('letterChanges :', letterChanges('Argument goes here'))
 
   // simple symbols
   // a string is accepted only
@@ -110,6 +116,29 @@ const HString = () => {
   // alphabetSoup
   const alphabetSoupValue = 'edgaccba'
   console.log('alphabetSoup : ', alphabetSoup(alphabetSoupValue))
+
+  // Simple string substitution
+  const name = 'Brendan'
+  console.log(`Yo, ${name}!`)
+
+  const a = 10
+  const b = 10
+  console.log(`Sum is : ${a + b}`) // Sum is : 20
+  console.log(`Multi is : ${a * b}`) // Multi is : 100
+
+  // Checking for inclusion
+  console.log('hello'.startsWith('hell')) // true
+  console.log('hello'.endsWith('ello')) // true
+  console.log('hello'.includes('ell')) // true
+  console.log('doo '.repeat(3)) // doo doo doo
+
+  // Spread a string
+  // or convert string to char array
+  const strTemplate = 'Steve'
+  const chars = [...strTemplate] // like split(')
+  console.log('chars : ', chars) // chars :  [ 'S', 't', 'e', 'v', 'e' ]
+  const [chars2] = strTemplate
+  console.log('chars2 : ', chars2)
 }
 
 

@@ -63,7 +63,7 @@ const HIterables = () => {
   console.log(numbersIterator.next()) // { value: 3, done: false }
   console.log(numbersIterator.next()) // { value: undefined, done: true }
   // as we can see above
-  // the benifits of iterable is that they
+  // the benefits of iterable is that they
   // hold context : last position without using
   // for or loop
   const charIterator = alphabetIterator()

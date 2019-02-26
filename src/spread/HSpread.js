@@ -67,7 +67,7 @@ const spreadArrayOperations = () => {
   // add at the begin
   const tab5 = ['A', 'B', 'C']
   tab3.unshift(...tab5)
-  console.log('combine unshift : ', tab3)
+  console.log('combine unshift : ', tab3) // [ 'A', 'B', ‘C’, '1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 'a', 'b', 'c' ]
 }
 
 const spreadObjectOperations = () => {
@@ -96,11 +96,11 @@ const spreadObjectOperations = () => {
   // simplify Object#assign
   // clone
   const obj = { a: 1 }
-  const copy = Object.assign({}, obj) // { a: 1 }
-  console.log('copy : ', copy)
+  const copy = Object.assign({}, obj)
+  console.log('copy : ', copy) // copy :  { a: 1 }
 
-  const clone = { ...obj } // { a: 1 }
-  console.log('clone : ', clone)
+  const clone = { ...obj }
+  console.log('clone : ', clone) // clone :  { a: 1 }
 
   // immutability of origin
   const objOrigin = { age: 4 }
@@ -115,28 +115,31 @@ const spreadObjectOperations = () => {
     ...objBase,
     lastName: 'Ben Khalfallah',
   }
-  console.log('objBase : ', objBase) // { firstName: 'Héla' }
-  console.log('copyBase : ', copyBase) // { firstName: 'Héla', lastName: 'Ben Khalfallah' }
+  console.log('objBase : ', objBase) // objBase :  { firstName: 'Héla' }
+  console.log('copyBase : ', copyBase) // copyBase :  { firstName: 'Héla', lastName: 'Ben Khalfallah' }
 
   // mutate copy
   // The line order maters for this to work.
-  // We need slastName: 'Ben Ghalba' to come after
+  // We need lastName: 'Ben Ghalba' to come after
   // ...copyBase so the overwrite happens.
   const mutateCopyBase = {
     ...copyBase,
     lastName: 'Ben Ghalba',
   }
-  console.log('copyBase : ', copyBase) // { firstName: 'Héla', lastName: 'Ben Khalfallah' }
-  console.log('mutateCopyBase : ', mutateCopyBase) // { firstName: 'Héla', lastName: 'Ben Ghalba' }
+  console.log('copyBase : ', copyBase) // copyBase :  { firstName: 'Héla', lastName: 'Ben Khalfallah' }
+  console.log('mutateCopyBase : ', mutateCopyBase) // mutateCopyBase :  { firstName: 'Héla', lastName: 'Ben Ghalba' }
 
   // state mutate
-  const state = { isFavorite: true, isWishList: true }
+  const state = {
+    isFavorite: true,
+    isWishList: true,
+  }
   const mutateState = {
     ...state,
     isFavorite: false,
   }
-  console.log('state : ', state) // { isFavorite: true, isWishList: true }
-  console.log('mutateState : ', mutateState) // { isFavorite: false, isWishList: true } : mutate only isFavorite
+  console.log('state : ', state) // state :  { isFavorite: true, isWishList: true }
+  console.log('mutateState : ', mutateState) // mutateState :  { isFavorite: false, isWishList: true } : mutate only isFavorite
 
   // mutate and extends
   const mutateExtendState = {
@@ -144,7 +147,7 @@ const spreadObjectOperations = () => {
     isFavorite: true,
     isLogged: false,
   }
-  console.log('mutateExtendState : ', mutateExtendState) // { isFavorite: true, isWishList: true, isLogged: false }
+  console.log('mutateExtendState : ', mutateExtendState) // mutateExtendState :  { isFavorite: true, isWishList: true, isLogged: false }
 }
 
 const HSpread = () => {

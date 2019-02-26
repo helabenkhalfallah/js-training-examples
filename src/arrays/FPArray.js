@@ -1,5 +1,6 @@
 // find item
-const findItem = (tab, query) => tab.filter(item => item === query)
+const findItem = (tab, query) =>
+  tab.filter(item => item === query)
 
 // compare two array and return differences
 // symetric difference
