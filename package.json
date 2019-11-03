@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/helabenkhalfallah/js-training-examples#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "co": "^4.6.0",
     "esm": "^3.2.25",
     "immutable": "^3.8.2",
-    "lodash": "^4.17.5",
-    "node-fetch": "^2.1.2",
-    "nodemon": "^1.17.2",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.4",
     "redux-saga": "^0.16.0"
   },
   "devDependencies": {
@@ -34,6 +34,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.10.0"
+    "eslint-plugin-import": "^2.18.2"
   }
 }
