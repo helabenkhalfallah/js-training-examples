@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/helabenkhalfallah/js-training-examples#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "co": "^4.6.0",
     "esm": "^3.2.25",
     "immutable": "^3.8.2",
