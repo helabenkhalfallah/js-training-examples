@@ -43,17 +43,17 @@ HDestructing()
 console.log(' --- HPureImpure ---')
 HPureImpure()
 
-console.log(' --- HGenerators Async ---')
-// HGeneratorsAsync()
-
 console.log(' --- HIterables ---')
 HIterables()
-
-console.log(' --- HGenerators ---')
-// HGenerators()
 
 console.log(' --- FPArray ---')
 FPArray()
 
 console.log(' --- FPFunctions ---')
 FPFunctions()
+
+console.log(' --- HGenerators Async ---')
+// HGeneratorsAsync()
+
+console.log(' --- HGenerators ---')
+HGenerators()

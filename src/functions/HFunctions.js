@@ -76,6 +76,17 @@ const filterComments = data => data.filter(comment => comment.categorie === 'nat
 const sortComments = data => data.sort((item, next) => item.id > next.id)
 const reduceComments = data => data.reduce((total, item) => total + item.note, 0)
 
+function findElementIndex(tab, element) {
+  let index = 0;
+  for (int = 0; i < tab.length; i++) {
+    if (tab[i] == element) {
+      index = i;
+      break;
+    }
+  }
+  return index;
+}
+
 const HFunctions = () => {
   // filter & sort
   console.log('HFunctions filterComments : ', filterComments(comments))

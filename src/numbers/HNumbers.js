@@ -51,8 +51,15 @@ const hours = val => (parseInt(val / 60, 10))
 const minutes = val => (parseInt(val % 60, 10))
 const timeConvert = num => (`${hours(num)}:${minutes(num)}`)
 
+const matcher = what => str => str.match(what)
+const hasSpaces = matcher(/\s+/g)
+const isNumber = value => matcher('')
+
+
 // number examples
 const HNumbers = () => {
+  console.log(hasSpaces('hello world')) // [" "]
+  console.log(hasSpaces('spaceless')) // null
   console.log(seven(times(five())))
   console.log(four(plus(nine())))
   console.log(eight(minus(three())))
