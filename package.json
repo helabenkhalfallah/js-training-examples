@@ -24,7 +24,7 @@
     "esm": "^3.2.25",
     "immutable": "^3.8.2",
     "lodash": "^4.17.15",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "nodemon": "^1.19.4",
     "redux-saga": "^0.16.0"
   },
